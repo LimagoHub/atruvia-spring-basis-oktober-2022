@@ -6,13 +6,18 @@
    xsi:schemaLocation = "http://www.springframework.org/schema/beans
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
    http://www.springframework.org/schema/context
-   http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+   http://www.springframework.org/schema/context/spring-context-3.0.xsd"
+    default-init-method="init" default-destroy-method="destroy"
+>
 
-    <bean id="demo" class="de.application.demo.Demo" scope="singleton" init-method="postConstruct">
-        <!--property name="translator" ref="translator" /-->
-        <constructor-arg ref="upper" />
+    <bean id="demo" class="de.application.demo.Demo"  scope="singleton" autowire="constructor">
+
     </bean>
 
     <bean id="upper" class="de.application.translator.ToUpperTranslatorImpl"/>
     <bean id="lower" class="de.application.translator.ToLowerTranslatorImpl"/>
+    <!-- bean id="lower" class="de.application.translator.ToLowerTranslatorImpl" / -->
+    <bean id="content" class = "de.application.demo.ContentInjection">
+        <property name="content" value="Neu" />
+    </bean>
 </beans>
