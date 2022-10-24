@@ -8,7 +8,11 @@
    http://www.springframework.org/schema/context
    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
+    <bean id="demo" class="de.application.demo.Demo" scope="singleton" init-method="postConstruct">
+        <!--property name="translator" ref="translator" /-->
+        <constructor-arg ref="upper" />
+    </bean>
 
-	
-
+    <bean id="upper" class="de.application.translator.ToUpperTranslatorImpl"/>
+    <bean id="lower" class="de.application.translator.ToLowerTranslatorImpl"/>
 </beans>
