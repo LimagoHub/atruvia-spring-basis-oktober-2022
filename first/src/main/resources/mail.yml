@@ -1,0 +1,9 @@
+mail:
+  smtp: smtp.mymail.de
+  pop: smtp.mymail.de
+  user: dozent
+  passwort: geheim
+#mail.smtp=smtp.mymail.de
+#mail.pop=pop.mymail.de
+#mail.user=dozent
+#mail.passwort=geheim
