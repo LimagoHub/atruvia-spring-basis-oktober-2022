@@ -13,7 +13,7 @@ import java.util.List;
 @Configuration
 @Setter
 @ConfigurationProperties(prefix = "mail")
-@PropertySource(value= "classpath:mail.yml",  factory = YamlPropertySourceFactory.class)
+@PropertySource(value= "classpath:mail.yaml",  factory = YamlPropertySourceFactory.class)
 public class MailConfig {
 
     private String smtp;
